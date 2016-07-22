@@ -3,8 +3,8 @@ FROM finalduty/archlinux:weekly
 MAINTAINER stefan.cocora@gmail.com
 
 RUN cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup \
-    && sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
-RUN rankmirrors -v -n 10 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+    && sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup \
+    && rankmirrors -v -n 4 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
 
 RUN pacman -Syu --noconfirm --force nginx-mainline
 
