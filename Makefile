@@ -62,6 +62,10 @@ interactive:
 
 curl:
 	@echo "---> Testing the webserver ..."
+	@echo ""
+	@echo "--->--- Container is running this version of nginx"
+	docker exec $(CONTAINERNAME) pacman -Q |grep nginx
+	@echo ""
 	util/curl.sh
 
 removec:

@@ -12,6 +12,8 @@ make build
 - to test the container run it locally mounting the configuration file from the `test/` directory
 ```bash
 make interactive
+...
+make curl
 ```
 
 Inspired by : https://github.com/UKHomeOffice/docker-nginx
