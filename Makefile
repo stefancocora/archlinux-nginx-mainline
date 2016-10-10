@@ -14,7 +14,7 @@ MAKEFLAGS += --no-builtin-rules
 
 # constants
 IMAGENAME='stefancocora/archlinux-nginx-mainline'
-VERSION := 'v1.11.3-1'
+VERSION := 'v1.11.4-1'
 CONTAINERNAME := 'nginx'
 
 # Metadata for driving the build lives here.
@@ -58,7 +58,7 @@ build:
 
 interactive:
 	@echo "---> Running interactively ..."
-	docker run --rm --name $(CONTAINERNAME) -v ${PWD}/test/nginx.conf:/etc/nginx/conf/simplenginx.conf -e NGINX_CONFIG_FILE=/etc/nginx/conf/simplenginx.conf --rm $(IMAGENAME):$(VERSION)
+	docker run --rm --name $(CONTAINERNAME) -v ${PWD}/test/nginx.conf:/etc/nginx/conf/simplenginx.conf -e NGINX_CONFIG_FILE=/etc/nginx/conf/simplenginx.conf $(IMAGENAME):$(VERSION)
 
 curl:
 	@echo "---> Testing the webserver ..."

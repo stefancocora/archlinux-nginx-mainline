@@ -13,7 +13,11 @@ make build
 ```bash
 make interactive
 ...
+from another terminal or terminal tab
 make curl
+...
+remove the container once happy with the testing
+make removec
 ```
 
 Inspired by : https://github.com/UKHomeOffice/docker-nginx
